@@ -1,0 +1,18 @@
+/* pages/post/post-detail/post-detail.wxss */
+@import "post-detail-tpl/post-detail-tpl";
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+.music{
+    width: 110rpx;
+    height: 110rpx;
+    position: absolute;
+    left: 50%;
+    margin-left: -51px;
+    top: 180rpx;
+    opacity: 0.9;
+}

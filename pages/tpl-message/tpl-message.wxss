@@ -1,0 +1,18 @@
+/* pages/tpl-message/tpl-message.wxss */
+input{
+  height: 100rpx;
+  width: 100%;
+  background: #f6f6f6;
+  margin-bottom: 30rpx;
+}
+
+button{
+  background: #4a6141;
+}
+
+picker{
+  width: 100%;
+  background-color: 30rpx;
+  background: #f6f6f6;
+  padding: 19rpx 26rpx;
+}

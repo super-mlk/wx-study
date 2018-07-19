@@ -1,0 +1,2 @@
+<!--pages/check/check.wxml-->
+<button type='primary' bindtap='onTap'>校验用户信息</button>

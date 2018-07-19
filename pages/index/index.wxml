@@ -1,0 +1,26 @@
+<!-- <view bindtap="countClick">我是index页面，你点击了{{count}}次</view> -->
+<view class='customSwiper'>
+  <!-- 不开启默认面板  -->
+  <swiper class='banner' autoplay='true' interval='2000' duration='300' bindchange='switchTab'>
+    <block wx:for="{{sliderList}}">
+      <swiper-item>
+        <image style='width:100%;height:100%' src='{{item.imageSource}}'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 自定义面板构建  -->
+  <view class='tab'>
+    <block wx:for="{{sliderList}}">
+      <view wx:if="{{item.selected}}" class='tab-item selected'>{{index+1}}</view>
+      <view wx:else class='tab-item'>{{index+1}}</view>
+    </block>
+  </view>
+</view>
+
+<view>
+  <picker value='{{selectedIndex}}' range='{{list}}' bindchange='change'>
+    <view class='picker'>
+      当前选中:{{list[selectedIndex]}}
+    </view>
+  </picker>  
+</view>

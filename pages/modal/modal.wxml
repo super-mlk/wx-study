@@ -1,0 +1,47 @@
+<!--components/ad/ad.wxml-->
+<view style='height:220rpx'></view>
+<view class="advertisement"  catchtap="advertisement">
+    <view class="ad_left">
+           <image class="ad_banner" wx:if="{{ad.banner}}" src='{{ad.banner}}'  mode="scaleToFill"></image> 
+          <view class='ad_avatar'> 
+              <image class="ad_img" src='{{ad.avatar}}'  mode="scaleToFill"></image>
+          </view>
+          <view class='ad_info'>
+              <view class="ad_info_top" style="color:{{ad.nameColor}}">
+                <text class="ad_name" >{{ad.name}}</text>
+                <view class="ad_local" style="color:{{ad.tipsColor}}">
+                    <text class="iconfont iconfont_local"></text>
+                    <text >{{ad.local}}</text>
+                </view>
+
+                
+              </view>
+              <text class="ad_tips" style="color:{{ad.tipsColor}}">{{ad.tips}}</text>
+          </view> 
+  </view>
+  <view class="ad_right">
+      <text class="ad_btn" style="background-color: {{ad.btnBgColor}};color:{{ad.btnColor}}">关注</text>
+  </view>
+  
+</view>
+<!-- 遮罩层 -->
+  <view class="mask_ad" wx:if="{{showMask}}" catchtap="closeMask">
+      <view class="mask_content"  wx:if="{{showAd}}"  catchtap="preventTouchMove" catchtouchmove="preventTouchMove">
+        <view class="mask_close"  catchtap="closeMask" >
+            <text class='close_line'></text>
+         </view>
+        <view class='mask_title'>{{ad.title}}</view>
+        <view class="mask_info">
+            <image class="mask_avatar" src='{{ad.avatar}}'  mode="scaleToFill"></image>
+            <view class="mask_text">
+                 <text class='mask_wxname'>{{ad.name}}</text>
+                 <text class='mask_wxid'>微信号：{{ad.id}}</text>
+            </view>
+          </view>
+           <view class='btn_copy' catchtap="copyId">
+                  <text>{{ad.btn}}</text>
+            </view>
+      </view>
+  </view>
+
+

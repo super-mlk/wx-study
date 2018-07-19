@@ -1,0 +1,3 @@
+<view>
+    <image src='{{imgList}}' bindtap='uploadPic'></image>
+</view>

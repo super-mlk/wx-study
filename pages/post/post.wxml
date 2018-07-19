@@ -1,0 +1,27 @@
+<view>
+    <!-- 轮播图 -->
+    <swiper indicator-dots='true' autoplay='true' interval='5000'>
+        <swiper-item>
+            <image src='/images/post/post-1@text.jpg'></image>
+        </swiper-item>
+        <swiper-item>
+            <image src='/images/post/post-2@text.jpg'></image>
+        </swiper-item>
+        <swiper-item>
+            <image src='/images/post/post-3@text.jpg'></image>
+        </swiper-item>
+    </swiper>
+
+    <import src="post-item/post-item-tpl.wxml" />
+
+    <!-- 文章列表 -->
+    <block wx:for="{{postList}}" wx:for-item="item" wx:for-index="idx">
+        <view catchtap="onTapToDetail" data-post-id='{{item.postId}}'>
+            <template is="postItemTpl" data="{{...item}}" />
+        </view>
+        <!-- include 必须将里面模板中的template删除，并且{{}}加上item -->
+        <!-- <include src="post-item/post-item-tpl.wxml"/> -->
+    </block>
+
+    
+</view>

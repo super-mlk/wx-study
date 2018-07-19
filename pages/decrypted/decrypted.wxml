@@ -1,0 +1,2 @@
+<!--pages/decrypted/decrypted.wxml-->
+<button type='primary' bindtap='onTap'>获取用户加密数据</button>

@@ -1,0 +1,45 @@
+{
+    "pages": [
+        "pages/welcome/welcome",
+        "pages/post/post",
+        "pages/post/post-detail/post-detail",
+        "pages/post/post-comment/post-comment",
+        "pages/wx-pay/wx-pay",
+        "pages/modal/modal",
+        "pages/uploadPic/uploadPic",
+        "pages/tpl-message/tpl-message",
+        "pages/decrypted/decrypted",
+        "pages/check/check",
+        "pages/login/login",
+        "pages/index/index",
+        "pages/logs/logs"
+    ],
+    "networkTimeout": {
+        "request": 6000,
+        "connectSocket": 6000
+    },
+    "tabBar": {
+        "color": "#000000",
+        "selectedColor": "#ff7f50",
+        "backgrundColor": "#ffffff",
+        "borderStyle": "black",
+        "list": [
+            {
+                "iconPath": "assets/img/home.png",
+                "selectedIconPath": "assets/img/home_active.png",
+                "pagePath": "pages/index/index",
+                "text": "首页"
+            },
+            {
+                "iconPath": "assets/img/me.png",
+                "selectedIconPath": "assets/img/me_active.png",
+                "pagePath": "pages/logs/logs",
+                "text": "搜索"
+            }
+        ]
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#ECC0A8"
+    }
+}

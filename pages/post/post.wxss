@@ -1,0 +1,10 @@
+@import "post-item/post-item-tpl.wxss";
+.post-container{
+    flex-direction: column;
+    display: flex;
+    margin: 20rpx 0 40rpx;
+    background: #fff;
+    border-bottom: 1px solid #ededed;
+    border-top: 1px solid #ededed;
+    padding-bottom: 5px;
+}
