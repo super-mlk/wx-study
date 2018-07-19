@@ -23,6 +23,7 @@ Page({
         })
         this.addReadingTimes();
         this.setMusicMonitor();
+        this.initMusicStatus();
     },
 
     /**
@@ -118,6 +119,7 @@ Page({
     },
     onMusicTap:function(event){
         if(this.data.isPlayingMusic){
+            // 暂停音乐播放
             wx.pauseBackgroundAudio();
             this.setData({
                 isPlayingMusic:false
@@ -133,6 +135,7 @@ Page({
                 isPlayingMusic:true
             })
             app.globalData.g_isPlayingMusic = true;
+            app.globalData.g_currentMusicPostId = this.postData.postId;
         }
     },
     setMusicMonitor: function () {
@@ -145,8 +148,17 @@ Page({
     },
     //初始化音乐播放图标状态
     initMusicStatus(){
-        this.setData({
-            isPlayingMusic: app.globalData.g_isPlayingMusic
-        })
+        var currentPostId = this.postData.postId;
+        if(app.globalData.g_isPlayingMusic && app.globalData.g_currentMusicPostId === currentPostId){
+            //如果全部播放的音乐是当前文章的音乐，就将图标状态设置为正在播放
+            this.setData({
+                isPlayingMusic: true
+            })
+        }else{
+            this.setData({
+                isPlayingMusic:false
+            });
+        }
+       
     }
 })
