@@ -1,5 +1,5 @@
 <view class="container">
-    <image class='head-image' src='{{post.postImg}}'></image>
+    <image class='head-image' src='{{isPlayingMusic?post.music.coverImg:post.postImg}}'></image>
 
     <image catchtap='onMusicTap' class='music' src="{{isPlayingMusic ? '/images/icon/wx_app_music_stop.png' : '/images/icon/wx_app_music_start.png'}}">
     </image>
@@ -16,8 +16,8 @@
 </view>
 <view class='tool'>
    <view class='tool-item' catchtap='onUpTap' data-post-id='{{post.postId}}'>
-        <image wx:if="{{post.upStatus}}" src='/images/icon/wx_app_liked.png'></image>
-        <image wx:else src='/images/icon/wx_app_like.png'></image>
+        <image animation="{{animationUp}}" wx:if="{{post.upStatus}}" src='/images/icon/wx_app_liked.png'></image>
+        <image animation="{{animationUp}}" wx:else src='/images/icon/wx_app_like.png'></image>
         <text>{{post.upNum}}</text>
     </view>
     <view class='tool-item comment' catchtap='onCommentTap' data-post-id="{{post.postId}}">

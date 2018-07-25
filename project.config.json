@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -37,9 +37,9 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "点赞",
-					"pathName": "pages/post/post-detail/post-detail",
-					"query": "id=2"
+					"name": "设置",
+					"pathName": "pages/setting/setting",
+					"query": ""
 				}
 			]
 		}

@@ -1,0 +1,63 @@
+<!--pages/setting/setting.wxml-->
+<view class='container'>
+    <view class='category-item personal-info'>
+        <view class='user-avatar'>
+            <image src='{{userInfo.avatarUrl}}'></image>
+        </view>
+        <view class='user-name'>
+            <view class='user-nickname'>
+                <text>{{userInfo.nickName}}</text>
+            </view>
+            <view class='user-location'>
+                <text>所在地:{{userInfo.city}}</text>
+            </view>
+        </view>
+    </view>
+
+    <!-- 缓存面板 -->
+    <view class='category-item'>
+        <block wx:for="{{cache}}">
+            <view class='detail-item' catchtap='{{item.tap}}'>
+                <image src='{{item.iconurl}}'></image>
+                <text>{{item.title}}</text>
+                <view class='detail-item-btn'></view>
+            </view>
+        </block>
+    </view>
+
+
+    <!-- 设备面板 -->
+    <view class='category-item'>
+        <block wx:for="{{device}}">
+            <view class='detail-item' catchtap='{{item.tap}}'>
+                <image src='{{item.iconurl}}'></image>
+                <text>{{item.title}}</text>
+                <view class='detail-item-btn'></view>
+            </view>
+        </block>
+    </view>
+
+
+    <!-- API 面板 -->
+    <view class='category-item'>
+        <block wx:for="{{api}}">
+            <view class='detail-item' catchtap='{{item.tap}}'>
+                <image src='{{item.iconurl}}'></image>
+                <text>{{item.title}}</text>
+                <view class='detail-item-btn'></view>
+            </view>
+        </block>
+    </view>
+
+    <!-- 其他杂项面板 -->
+
+    <view class='category-item'>
+        <block wx:for="{{others}}">
+            <view class='detail-item' catchtap='{{item.tap}}'>
+                <image src='{{item.iconurl}}'></image>
+                <text>{{item.title}}</text>
+                <view class='detail-item-btn'></view>
+            </view>
+        </block>
+    </view>
+</view>

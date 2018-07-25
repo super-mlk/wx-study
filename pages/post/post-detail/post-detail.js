@@ -24,6 +24,7 @@ Page({
         this.addReadingTimes();
         this.setMusicMonitor();
         this.initMusicStatus();
+        this.setAniation();
     },
 
     /**
@@ -105,7 +106,18 @@ Page({
         this.setData({
             'post.upStatus': newData.upStatus,
             'post.upNum': newData.upNum
+        }),
+
+        this.animationUp.scale(2).step();
+        this.setData({
+            animationUp:this.animationUp.export()
         })
+        setTimeout(function(){
+            this.animationUp.scale(1).step();
+            this.setData({
+                animationUp:this.animationUp.export()
+            })
+        }.bind(this),300)
     },
     onCommentTap: function (event) {
         var id = event.currentTarget.dataset.postId;
@@ -144,7 +156,27 @@ Page({
             that.setData({
                 isPlayingMusic:false
             })
-        })
+        });
+
+        wx.onBackgroundAudioPlay(function(){
+            //只处理当前页面的音乐播放
+            if(app.globalData.g_currentMusicPostId === that.postData.postId){
+                that.setData({
+                    isPlaying:true
+                })
+            }
+            app.globalData.g_isPlayingMusic = true;
+        });
+
+        wx.onBackgroundAudioPause(function(){
+            //只处理当前页面的音乐暂停
+            if(app.globalData.g_currentMusicPostId == that.postData.postId){
+                that.setData({
+                    isPlayingMusic:false
+                })
+            }
+            app.globalData.g_isPlayingMusic = false;
+        });
     },
     //初始化音乐播放图标状态
     initMusicStatus(){
@@ -160,5 +192,22 @@ Page({
             });
         }
        
+    },
+    // 定义页面分享函数
+    onShareAppMessage:function(){
+        return{
+            title:this.postData.title,
+            desc:this.postData.content,
+            path:"/pages/post/post-detail/post-detail"
+        }
+    },
+    // 动画
+    setAniation:function(){
+        //定义动画
+        var animationUp = wx.createAnimation({
+            timingFunction:'ease-in-out'
+        })
+
+        this.animationUp = animationUp
     }
 })

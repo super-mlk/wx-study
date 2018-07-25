@@ -1,14 +1,14 @@
 <view>
     <!-- 轮播图 -->
-    <swiper indicator-dots='true' autoplay='true' interval='5000'>
+    <swiper catchtap='onShowTap' vertical='{{false}}' indicator-dots='true' autoplay='true' interval='5000' circular='true'>
         <swiper-item>
-            <image src='/images/post/post-1@text.jpg'></image>
+            <image src='/images/post/post-1@text.jpg' data-post-id='3'></image>
         </swiper-item>
         <swiper-item>
-            <image src='/images/post/post-2@text.jpg'></image>
+            <image src='/images/post/post-2@text.jpg' data-post-id='4'></image>
         </swiper-item>
         <swiper-item>
-            <image src='/images/post/post-3@text.jpg'></image>
+            <image src='/images/post/post-3@text.jpg' data-post-id='5'></image>
         </swiper-item>
     </swiper>
 
