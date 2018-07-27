@@ -1,7 +1,7 @@
 // pages/post/post-detail/post-detail.js
 import { DBPost } from "../../../db/DBPost.js";
 var app = getApp();
-console.log(app.globalData.g_isPlayingMusic);
+// console.log(app.globalData.g_isPlayingMusic);
 Page({
 
     /**

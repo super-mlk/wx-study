@@ -37,8 +37,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "设置",
-					"pathName": "pages/setting/setting",
+					"name": "wx:key",
+					"pathName": "pages/movie/movie",
 					"query": ""
 				}
 			]

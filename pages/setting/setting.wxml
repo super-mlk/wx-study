@@ -60,4 +60,12 @@
             </view>
         </block>
     </view>
+
+    <modal title="指南针" confirm-text="确定" no-cancel hidden="{{compassHidden}}" bindconfirm="hideCompass" confirm-color="#1f4ba5">
+        当前方向:偏北{{compassVal}}
+    </modal>
+    
+    <modal title="摇一摇" confirm-text="确定" no-cancel hidden="{{shakeInfo.gravityModalHidden}}" bindconfirm="gravityModalConfirm" confirm-color="#1f4ba5">
+        当前摇一摇次数:{{shakeInfo.num}}
+    </modal>
 </view>
